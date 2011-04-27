@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B27B16513689D0200C4EAFA /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B27B16413689D0200C4EAFA /* libcrypto.dylib */; };
 		5300C0CA10BBCB0400C42F60 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5300C0C910BBCB0400C42F60 /* WebKit.framework */; };
 		5300C0CF10BBCB4300C42F60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5300C0CE10BBCB4300C42F60 /* Security.framework */; };
-		5300C0D310BBCB5500C42F60 /* libcrypto.0.9.7.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5300C0D210BBCB5500C42F60 /* libcrypto.0.9.7.dylib */; };
 		5306F953103B8E6D0061C722 /* FBWebViewWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5306F952103B8E6D0061C722 /* FBWebViewWindow.xib */; };
 		5306F969103B8F210061C722 /* FBWebViewWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5306F967103B8F210061C722 /* FBWebViewWindowController.m */; };
 		5306F970103B8FB40061C722 /* NSString+.m in Sources */ = {isa = PBXBuildFile; fileRef = 5306F96C103B8FB40061C722 /* NSString+.m */; };
@@ -39,6 +39,7 @@
 /* Begin PBXFileReference section */
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		0B27B16413689D0200C4EAFA /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = usr/lib/libcrypto.dylib; sourceTree = SDKROOT; };
 		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		5300C0C910BBCB0400C42F60 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = /System/Library/Frameworks/WebKit.framework; sourceTree = "<absolute>"; };
 		5300C0CE10BBCB4300C42F60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
@@ -98,7 +99,7 @@
 				8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */,
 				5300C0CA10BBCB0400C42F60 /* WebKit.framework in Frameworks */,
 				5300C0CF10BBCB4300C42F60 /* Security.framework in Frameworks */,
-				5300C0D310BBCB5500C42F60 /* libcrypto.0.9.7.dylib in Frameworks */,
+				0B27B16513689D0200C4EAFA /* libcrypto.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +117,7 @@
 		0867D691FE84028FC02AAC07 /* FBCocoa */ = {
 			isa = PBXGroup;
 			children = (
+				0B27B16413689D0200C4EAFA /* libcrypto.dylib */,
 				5306F955103B8E820061C722 /* source */,
 				089C1665FE841158C02AAC07 /* resources */,
 				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
@@ -301,7 +303,11 @@
 			isa = PBXProject;
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "FBCocoa" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
 			mainGroup = 0867D691FE84028FC02AAC07 /* FBCocoa */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
@@ -407,26 +413,28 @@
 		1DEB91B208733DA50010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
 		1DEB91B308733DA50010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.4;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
